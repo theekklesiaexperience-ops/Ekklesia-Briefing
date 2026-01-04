@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Ekklesia Mandate - Leadership Briefing | January 31, 2026</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-deep: #02030a;
+      --bg-main: #050819;
+      --bg-soft: #0b1028;
+      --bg-panel: #0d1230;
+      --accent-purple: #6b4dff;
+      --accent-purple-soft: #8b6dff;
+      --accent-gold: #f4c96b;
+      --accent-gold-soft: #f7e0a8;
+      --accent-teal: #00bcd4;
+      --text-main: #f5f5ff;
+      --text-soft: #a7a8c5;
+      --text-muted: #6b6d8a;
+      --border-subtle: rgba(139, 109, 255, 0.3);
+      --border-gold: rgba(244, 201, 107, 0.4);
+      --shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.75);
+      --shadow-glow: 0 0 40px rgba(107, 77, 255, 0.4);
+      --radius-lg: 22px;
+      --radius-md: 14px;
+      --radius-sm: 8px;
+      --success: #27ae60;
+      --active: #ffc107;
+      --locked: #4a5580;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-deep);
+      color: var(--text-main);
+      line-height: 1.7;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg-deep); }
+    ::-webkit-scrollbar-thumb { background: var(--accent-purple); border-radius: 4px; }
+
+    /* ========== CUSTOM SACRED CURSOR ========== */
+    *, *::before, *::after {
+      cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cdefs%3E%3ClinearGradient id='crossGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23f4c96b'/%3E%3Cstop offset='100%25' stop-color='%238b6dff'/%3E%3C/linearGradient%3E%3Cfilter id='glow'%3E%3CfeGaussianBlur stdDeviation='0.5' result='blur'/%3E%3CfeMerge%3E%3CfeMergeNode in='blur'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Cg filter='url(%23glow)'%3E%3Cpath d='M12 2L12 22M2 12L22 12' stroke='url(%23crossGrad)' stroke-width='2.5' stroke-linecap='round'/%3E%3Ccircle cx='12' cy='12' r='3' fill='none' stroke='%23f4c96b' stroke-width='1' opacity='0.6'/%3E%3C/g%3E%3C/svg%3E") 12 12, crosshair;
+    }
+
+    a, button, .btn, input[type="submit"], input[type="button"], select {
+      cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cdefs%3E%3ClinearGradient id='doveGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23f4c96b'/%3E%3Cstop offset='50%25' stop-color='%23ffffff'/%3E%3Cstop offset='100%25' stop-color='%238b6dff'/%3E%3C/linearGradient%3E%3Cfilter id='glowPointer'%3E%3CfeGaussianBlur stdDeviation='0.8' result='blur'/%3E%3CfeMerge%3E%3CfeMergeNode in='blur'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Cg filter='url(%23glowPointer)' transform='translate(4,2)'%3E%3Cpath d='M10 2C10 2 8 4 6 6C4 8 2 9 2 11C2 13 4 14 6 14C7 14 8 13.5 9 13L10 16C10 16 11 18 12 18C13 18 14 17 14 16L13 13C14 13.5 15 14 16 14C18 14 20 13 20 11C20 9 18 8 16 6C14 4 12 2 12 2C12 2 11 1 10 2Z' fill='url(%23doveGrad)' stroke='%23f4c96b' stroke-width='0.5'/%3E%3Cellipse cx='7' cy='9' rx='1' ry='0.8' fill='%23050819'/%3E%3C/g%3E%3C/svg%3E") 10 10, pointer;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    /* Hero Header */
+    .hero-header {
+      text-align: center;
+      padding: 60px 20px 40px 20px;
+      background: linear-gradient(180deg, rgba(107, 77, 255, 0.1) 0%, transparent 100%);
+      border-bottom: 1px solid var(--border-subtle);
+      margin-bottom: 40px;
+    }
+
+    .hero-header h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 3rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-purple-soft) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 15px;
+      letter-spacing: 2px;
+      text-shadow: 0 0 30px rgba(107, 77, 255, 0.5);
+    }
+
+    .hero-header .subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-style: italic;
+      color: var(--text-soft);
+      margin-bottom: 10px;
+    }
+
+    .hero-header .tagline {
+      font-size: 1rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    /* Meeting Details Card */
+    .meeting-details-card {
+      background: linear-gradient(145deg, var(--bg-panel), var(--bg-soft));
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-lg);
+      padding: 35px;
+      margin-bottom: 40px;
+      box-shadow: var(--shadow-soft), var(--shadow-glow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .meeting-details-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-gold), var(--accent-purple), var(--accent-gold));
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+      margin-top: 25px;
+    }
+
+    .detail-item {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 20px;
+      border-radius: var(--radius-md);
+      border-left: 3px solid var(--accent-purple);
+      transition: all 0.3s ease;
+    }
+
+    .detail-item:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-left-color: var(--accent-gold);
+      transform: translateX(5px);
+    }
+
+    .detail-label {
+      font-family: 'Cinzel', serif;
+      color: var(--accent-gold);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .detail-value {
+      color: var(--text-main);
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    /* Content Section */
+    .content-section {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      margin-bottom: 30px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .content-section h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      color: var(--accent-gold);
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid var(--border-subtle);
+    }
+
+    .content-section h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.3rem;
+      color: var(--accent-purple-soft);
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+
+    .content-section p {
+      color: var(--text-soft);
+      margin-bottom: 15px;
+      line-height: 1.8;
+    }
+
+    .content-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .content-section li {
+      color: var(--text-soft);
+      margin-bottom: 12px;
+      padding-left: 30px;
+      position: relative;
+    }
+
+    .content-section li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--accent-gold);
+      font-size: 1.2rem;
+    }
+
+    /* Agenda Items */
+    .agenda-item {
+      background: rgba(255, 255, 255, 0.03);
+      border-left: 3px solid var(--accent-purple);
+      padding: 20px;
+      margin-bottom: 15px;
+      border-radius: var(--radius-sm);
+      transition: all 0.3s ease;
+    }
+
+    .agenda-item:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-left-color: var(--accent-gold);
+      transform: translateX(5px);
+    }
+
+    .agenda-time {
+      font-family: 'Cinzel', serif;
+      color: var(--accent-gold);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 8px;
+    }
+
+    .agenda-title {
+      font-weight: 600;
+      color: var(--text-main);
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .agenda-description {
+      color: var(--text-soft);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* NDA Section */
+    .nda-section {
+      background: linear-gradient(145deg, rgba(244, 201, 107, 0.05), rgba(107, 77, 255, 0.05));
+      border: 2px solid var(--border-gold);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      margin-bottom: 40px;
+      box-shadow: var(--shadow-soft), 0 0 50px rgba(244, 201, 107, 0.1);
+    }
+
+    .nda-section h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      color: var(--accent-gold);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .nda-content {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 30px;
+      margin-top: 25px;
+    }
+
+    /* Form Styles */
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-group label {
+      display: block;
+      font-family: 'Cinzel', serif;
+      color: var(--accent-gold);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 10px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 14px 18px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      color: var(--text-main);
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.3s ease;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--accent-gold);
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 20px rgba(244, 201, 107, 0.2);
+    }
+
+    .form-group input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: start;
+      gap: 15px;
+      margin: 25px 0;
+      padding: 20px;
+      background: rgba(244, 201, 107, 0.05);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-sm);
+    }
+
+    .checkbox-group input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      margin-top: 3px;
+      flex-shrink: 0;
+      accent-color: var(--accent-gold);
+    }
+
+    .checkbox-group label {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-soft);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 0;
+      text-transform: none;
+      letter-spacing: normal;
+    }
+
+    /* Submit Button */
+    .submit-btn {
+      width: 100%;
+      padding: 18px 40px;
+      background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-gold) 100%);
+      color: var(--bg-deep);
+      border: none;
+      border-radius: var(--radius-md);
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 25px rgba(107, 77, 255, 0.4);
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 35px rgba(107, 77, 255, 0.6);
+    }
+
+    .submit-btn:disabled {
+      background: var(--locked);
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    /* Confirmation Message */
+    .confirmation {
+      display: none;
+      background: linear-gradient(135deg, rgba(39, 174, 96, 0.2), rgba(39, 174, 96, 0.1));
+      border: 2px solid var(--success);
+      border-radius: var(--radius-md);
+      padding: 40px;
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .confirmation.show {
+      display: block;
+      animation: slideIn 0.5s ease;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .confirmation h3 {
+      font-family: 'Cinzel', serif;
+      color: var(--success);
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    .confirmation p {
+      color: var(--text-soft);
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--bg-soft);
+      border-top: 1px solid var(--border-subtle);
+      padding: 30px 20px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .footer p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+
+    .footer .tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--text-soft);
+      margin-top: 10px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-header h1 {
+        font-size: 2rem;
+      }
+      
+      .hero-header .subtitle {
+        font-size: 1.2rem;
+      }
+      
+      .detail-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .content-section {
+        padding: 25px;
+      }
+      
+      .nda-section {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Hero Header -->
+    <div class="hero-header">
+      <h1>The Ekklesia Mandate</h1>
+      <p class="subtitle">Apostolic Leadership Briefing</p>
+      <p class="tagline">Called Out • Consecrated • Commissioned</p>
+      <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--accent-gold); margin-top: 20px; font-size: 1.1rem;">"Can two walk together, unless they are agreed?" — Amos 3:3</p>
+    </div>
+
+    <!-- Meeting Details Card -->
+    <div class="meeting-details-card">
+      <h2 style="font-family: 'Cinzel', serif; color: var(--accent-gold); margin-bottom: 20px; text-align: center;">Meeting Details</h2>
+      <div class="detail-grid">
+        <div class="detail-item">
+          <span class="detail-label">Date</span>
+          <span class="detail-value">Saturday, January 31, 2026</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Time</span>
+          <span class="detail-value">9:00 AM EST / 8:00 AM CST</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Location</span>
+          <span class="detail-value">Virtual (Google Meet)</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Host</span>
+          <span class="detail-value">Elder Tiffani Lansdowne, Atmosphere Christian Center</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Who Should Attend Section -->
+    <div class="content-section">
+      <h2>Who Should Attend</h2>
+      
+      <p style="margin-bottom: 25px;">This exclusive briefing is designed for Kingdom leaders with the vision, authority, and capacity to participate in apostolic-level collaboration:</p>
+
+      <div style="background: rgba(139, 109, 255, 0.1); border-left: 3px solid var(--accent-purple); padding: 25px; border-radius: var(--radius-md); margin-bottom: 20px;">
+        <h3 style="margin-top: 0; color: var(--accent-gold); font-size: 1.2rem;">✓ Invited Attendees Include:</h3>
+        <ul style="margin: 15px 0 0 0;">
+          <li><strong>Apostolic Leaders & Senior Pastors</strong> with vision for Kingdom advancement and established ministries</li>
+          <li><strong>Ministry Leaders</strong> with apostolic covering and strategic influence in their spheres</li>
+          <li><strong>Faith-Based Educators</strong> passionate about Kingdom education models and alternative learning systems</li>
+          <li><strong>Kingdom Investors</strong> seeking righteous deployment of resources in Kingdom initiatives</li>
+          <li><strong>Community Development Leaders</strong> aligned with biblical principles and sustainable models</li>
+          <li><strong>Strategic Partners</strong> with capacity for collaborative Kingdom work and proven track record</li>
+        </ul>
+      </div>
+
+      <div style="background: rgba(244, 201, 107, 0.1); border-left: 3px solid var(--accent-gold); padding: 25px; border-radius: var(--radius-md); margin-bottom: 20px;">
+        <h3 style="margin-top: 0; color: var(--accent-purple-soft); font-size: 1.2rem;">Required Qualifications:</h3>
+        <ul style="margin: 15px 0 0 0;">
+          <li>Demonstrated <strong>apostolic or senior leadership</strong> role in established ministry or faith-based organization</li>
+          <li>Clear <strong>spiritual authority and covering</strong> from recognized apostolic leadership</li>
+          <li>Proven capacity for <strong>strategic collaboration</strong> and Kingdom partnership</li>
+          <li>Alignment with <strong>biblical principles</strong> and sound theological foundation</li>
+          <li>Ability to honor <strong>confidentiality</strong> and covenant relationships</li>
+          <li>Genuine interest in <strong>Kingdom economics</strong> and alternative systems to secular structures</li>
+        </ul>
+      </div>
+
+      <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); padding: 20px; border-radius: var(--radius-md); margin-top: 25px;">
+        <p style="color: var(--text-soft); font-size: 0.95rem; line-height: 1.7; margin: 0;"><strong style="color: var(--accent-gold);">Please Note:</strong> This briefing addresses apostolic-level vision and requires strategic capacity for implementation. If you're uncertain whether this briefing is appropriate for your current ministry level or leadership position, please contact us at <a href="/cdn-cgi/l/email-protection#8afee2efefe1e1e6eff9e3ebeff2faeff8e3efe4e9efcaede7ebe3e6a4e9e5e7" style="color: var(--accent-purple-soft); text-decoration: none;"><span class="__cf_email__" data-cfemail="c6b2aea3a3adadaaa3b5afa7a3beb6a3b4afa3a8a5a386a1aba7afaae8a5a9ab">[email&#160;protected]</span></a> before completing the NDA.</p>
+      </div>
+    </div>
+
+    <!-- Agenda Section -->
+    <div class="content-section">
+      <h2>Meeting Agenda</h2>
+      
+      <div class="agenda-item">
+        <div class="agenda-time">Opening</div>
+        <div class="agenda-title">Welcome & Prayer</div>
+        <div class="agenda-description">Setting spiritual atmosphere and alignment with Kingdom purpose</div>
+      </div>
+
+      <div class="agenda-item">
+        <div class="agenda-time">Opening (5 min)</div>
+        <div class="agenda-title">Welcome & Spiritual Alignment</div>
+        <div class="agenda-description">Prayer and heart posture for receiving governmental mandate</div>
+      </div>
+
+      <div class="agenda-item">
+        <div class="agenda-time">10 minutes</div>
+        <div class="agenda-title">Who We Are: Identity in the Ekklesia</div>
+        <div class="agenda-description">Biblical Ekklesia vs. institutional Christianity - The Church as government, not institution</div>
+      </div>
+
+      <div class="agenda-item">
+        <div class="agenda-time">12 minutes</div>
+        <div class="agenda-title">The Mandate: Called Out, Consecrated & Commissioned</div>
+        <div class="agenda-description">The three-fold governmental mandate and the prophetic timing of this season</div>
+      </div>
+
+      <div class="agenda-item">
+        <div class="agenda-time">15 minutes</div>
+        <div class="agenda-title">The Vision: What Has Been Revealed</div>
+        <div class="agenda-description">Heaven's blueprint for Earth governance, the systems and strategies released, and the Kairos moment</div>
+      </div>
+
+      <div class="agenda-item">
+        <div class="agenda-time">12 minutes</div>
+        <div class="agenda-title">Memshalah Global: Mission, Vision & Purpose</div>
+        <div class="agenda-description">Faith-based governing network to restore the Church's governmental mandate and establish Heaven's infrastructure in Earth</div>
+      </div>
+
+      <div class="agenda-item">
+        <div class="agenda-time">7 minutes</div>
+        <div class="agenda-title">Covenant Partnership Invitation</div>
+        <div class="agenda-description">Overview of covenant partnership for those called to the Apostolic Council (detailed process in follow-up meeting)</div>
+      </div>
+
+      <div class="agenda-item">
+        <div class="agenda-time">Closing (3 min)</div>
+        <div class="agenda-title">Questions & Next Steps</div>
+        <div class="agenda-description">How to move forward and closing prayer</div>
+      </div>
+    </div>
+
+    <!-- NDA Section -->
+    <div class="nda-section">
+      <h2>Confidentiality Agreement</h2>
+      
+      <div class="nda-content">
+        <p style="color: var(--text-main); font-weight: 600; margin-bottom: 20px; text-align: center;">MUTUAL NON-DISCLOSURE AGREEMENT</p>
+        
+        <p>This Non-Disclosure Agreement ("Agreement") is entered into as of the date of signature below.</p>
+
+        <h3>1. Purpose</h3>
+        <p>The parties wish to explore potential participation in The Ekklesia Mandate apostolic council formation and the establishment of Heaven's governmental infrastructure through Memshalah Global. In connection with this purpose, it may be necessary to disclose certain confidential governmental strategies and Kingdom frameworks.</p>
+
+        <h3>2. Confidential Information</h3>
+        <p>"Confidential Information" includes, but is not limited to:</p>
+        <ul>
+          <li>Governmental strategies and Heaven's blueprint for Earth</li>
+          <li>Apostolic council structure and covenant relationships</li>
+          <li>Theological frameworks and Kingdom governmental order</li>
+          <li>Strategic plans for establishing Ekklesia authority</li>
+          <li>Prophetic insights and spiritual strategies</li>
+          <li>Any information marked as confidential or that would reasonably be considered confidential</li>
+        </ul>
+
+        <h3>3. Obligations</h3>
+        <p>The receiving party agrees to:</p>
+        <ul>
+          <li>Hold all Confidential Information in strict confidence</li>
+          <li>Not disclose Confidential Information to any third party without prior written consent</li>
+          <li>Use Confidential Information solely for evaluating participation in the apostolic council</li>
+          <li>Protect Confidential Information with the same degree of care used to protect their own confidential information</li>
+          <li>Limit access to Confidential Information to those with a legitimate need to know</li>
+        </ul>
+
+        <h3>4. Exceptions</h3>
+        <p>Confidential Information does not include information that:</p>
+        <ul>
+          <li>Is or becomes publicly available through no breach of this Agreement</li>
+          <li>Was rightfully known prior to disclosure</li>
+          <li>Is independently developed without use of Confidential Information</li>
+          <li>Is required to be disclosed by law or court order (with prior notice to disclosing party)</li>
+        </ul>
+
+        <h3>5. Term</h3>
+        <p>This Agreement shall remain in effect for a period of three (3) years from the date of signature. The obligations regarding Confidential Information shall survive termination of this Agreement.</p>
+
+        <h3>6. Return of Materials</h3>
+        <p>Upon request, the receiving party shall promptly return or destroy all materials containing Confidential Information.</p>
+
+        <h3>7. No License</h3>
+        <p>Nothing in this Agreement grants any license or right to intellectual property, or creates any partnership, joint venture, or employment relationship.</p>
+
+        <!-- Confirmation Message -->
+        <div id="confirmationMessage" class="confirmation">
+          <h3>✓ Agreement Accepted</h3>
+          <p>Thank you for reviewing and accepting the confidentiality agreement. Your information has been recorded.<br><br>We look forward to seeing you on January 31, 2026.</p>
+        </div>
+
+        <!-- NDA Form -->
+        <form id="ndaForm" style="margin-top: 40px;">
+          <div style="background: rgba(244, 201, 107, 0.1); border: 1px solid var(--border-gold); border-radius: var(--radius-md); padding: 25px; margin-bottom: 30px;">
+            <h3 style="font-family: 'Cinzel', serif; color: var(--accent-gold); text-align: center; margin-bottom: 15px;">Digital Signature & Acknowledgment</h3>
+            <p style="color: var(--text-soft); text-align: center; font-size: 0.95rem;">By signing below, you acknowledge that you have read, understood, and agree to the terms of this Non-Disclosure Agreement.</p>
+          </div>
+
+          <div class="form-group">
+            <label for="fullName">Full Legal Name *</label>
+            <input type="text" id="fullName" name="fullName" required placeholder="Enter your full legal name">
+          </div>
+
+          <div class="form-group">
+            <label for="organization">Organization/Ministry *</label>
+            <input type="text" id="organization" name="organization" required placeholder="Your organization or ministry">
+          </div>
+
+          <div class="form-group">
+            <label for="title">Title/Position *</label>
+            <input type="text" id="title" name="title" required placeholder="Your role or position">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" required placeholder="(555) 555-5555">
+          </div>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="agreement" name="agreement" required>
+            <label for="agreement">I have read and agree to the terms of this Non-Disclosure Agreement. I understand that by signing below, I am legally bound to maintain confidentiality of all information shared during the January 31, 2026 briefing.</label>
+          </div>
+
+          <div class="form-group">
+            <label for="signature">Digital Signature (Type Full Name) *</label>
+            <input type="text" id="signature" name="signature" required placeholder="Type your full legal name">
+          </div>
+
+          <div class="form-group">
+            <label for="date">Date *</label>
+            <input type="date" id="date" name="date" required>
+          </div>
+
+          <button type="submit" class="submit-btn">Accept Agreement & Confirm Attendance</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>&copy; 2025 Xodus Conglomerate Group</p>
+      <p class="tagline">The Ekklesia Mandate | Genesis Continuum Academy | The Ekklesia Experience</p>
+      <p style="margin-top: 15px; font-size: 0.85rem;">Questions? Contact: <a href="/cdn-cgi/l/email-protection#63170b060608080f06100a02061b1306110a060d000623040e020a0f4d000c0e" style="color: var(--accent-gold); text-decoration: none;"><span class="__cf_email__" data-cfemail="e6928e83838d8d8a83958f87839e9683948f83888583a6818b878f8ac885898b">[email&#160;protected]</span></a></p>
+    </div>
+  </div>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // Set today's date as default
+    document.getElementById('date').valueAsDate = new Date();
+
+    // Google Apps Script URL for form submission
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzLGTfFujF2YmnCB09QXTimo7ZxSOiwe8nHF7SKakAUQkTwf2evbnKpr-JrBFUmpkAR/exec';
+
+    document.getElementById('ndaForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = {
+        fullName: document.getElementById('fullName').value,
+        organization: document.getElementById('organization').value,
+        title: document.getElementById('title').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        signature: document.getElementById('signature').value,
+        date: document.getElementById('date').value,
+        timestamp: new Date().toISOString(),
+        ipAddress: 'N/A'
+      };
+
+      // Validate signature matches name
+      if (formData.signature.toLowerCase() !== formData.fullName.toLowerCase()) {
+        alert('⚠️ Your digital signature must match your full legal name exactly.');
+        return;
+      }
+
+      // Disable submit button to prevent double submission
+      const submitBtn = document.querySelector('.submit-btn');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+
+      // Send to Google Sheets
+      fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(() => {
+        // Show confirmation
+        document.getElementById('ndaForm').style.display = 'none';
+        document.getElementById('confirmationMessage').classList.add('show');
+        
+        // Scroll to confirmation
+        document.getElementById('confirmationMessage').scrollI
