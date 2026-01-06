@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Ekklesia Mandate - Leadership Briefing | January 31, 2026</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-deep: #02030a;
+      --bg-main: #050819;
+      --bg-soft: #0b1028;
+      --bg-panel: #0d1230;
+      --accent-purple: #6b4dff;
+      --accent-purple-soft: #8b6dff;
+      --accent-gold: #f4c96b;
+      --accent-gold-soft: #f7e0a8;
+      --accent-teal: #00bcd4;
+      --text-main: #f5f5ff;
+      --text-soft: #a7a8c5;
+      --text-muted: #6b6d8a;
+      --border-subtle: rgba(139, 109, 255, 0.3);
+      --border-gold: rgba(244, 201, 107, 0.4);
+      --shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.75);
+      --shadow-glow: 0 0 40px rgba(107, 77, 255, 0.4);
+      --radius-lg: 22px;
+      --radius-md: 14px;
+      --radius-sm: 8px;
+      --success: #27ae60;
+      --active: #ffc107;
+      --locked: #4a5580;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-deep);
+      color: var(--text-main);
+      line-height: 1.7;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg-deep); }
+    ::-webkit-scrollbar-thumb { background: var(--accent-purple); border-radius: 4px; }
+
+    *, *::before, *::after {
+      cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cdefs%3E%3ClinearGradient id='crossGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23f4c96b'/%3E%3Cstop offset='100%25' stop-color='%238b6dff'/%3E%3C/linearGradient%3E%3Cfilter id='glow'%3E%3CfeGaussianBlur stdDeviation='0.5' result='blur'/%3E%3CfeMerge%3E%3CfeMergeNode in='blur'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Cg filter='url(%23glow)'%3E%3Cpath d='M12 2L12 22M2 12L22 12' stroke='url(%23crossGrad)' stroke-width='2.5' stroke-linecap='round'/%3E%3Ccircle cx='12' cy='12' r='3' fill='none' stroke='%23f4c96b' stroke-width='1' opacity='0.6'/%3E%3C/g%3E%3C/svg%3E") 12 12, crosshair;
+    }
+
+    a, button, .btn, input[type="submit"], input[type="button"], select {
+      cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cdefs%3E%3ClinearGradient id='doveGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23f4c96b'/%3E%3Cstop offset='50%25' stop-color='%23ffffff'/%3E%3Cstop offset='100%25' stop-color='%238b6dff'/%3E%3C/linearGradient%3E%3Cfilter id='glowPointer'%3E%3CfeGaussianBlur stdDeviation='0.8' result='blur'/%3E%3CfeMerge%3E%3CfeMergeNode in='blur'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Cg filter='url(%23glowPointer)' transform='translate(4,2)'%3E%3Cpath d='M10 2C10 2 8 4 6 6C4 8 2 9 2 11C2 13 4 14 6 14C7 14 8 13.5 9 13L10 16C10 16 11 18 12 18C13 18 14 17 14 16L13 13C14 13.5 15 14 16 14C18 14 20 13 20 11C20 9 18 8 16 6C14 4 12 2 12 2C12 2 11 1 10 2Z' fill='url(%23doveGrad)' stroke='%23f4c96b' stroke-width='0.5'/%3E%3Cellipse cx='7' cy='9' rx='1' ry='0.8' fill='%23050819'/%3E%3C/g%3E%3C/svg%3E") 10 10, pointer;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .hero-header {
+      text-align: center;
+      padding: 60px 20px 40px 20px;
+      background: linear-gradient(180deg, rgba(107, 77, 255, 0.1) 0%, transparent 100%);
+      border-bottom: 1px solid var(--border-subtle);
+      margin-bottom: 40px;
+    }
+
+    .hero-header h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 3rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-purple-soft) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 15px;
+      letter-spacing: 2px;
+      text-shadow: 0 0 30px rgba(107, 77, 255, 0.5);
+    }
+
+    .hero-header .subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-style: italic;
+      color: var(--text-soft);
+      margin-bottom: 10px;
+    }
+
+    .hero-header .tagline {
+      font-size: 1rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 15px;
+    }
+
+    .hero-header .scripture {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--accent-gold);
+      margin-top: 15px;
+    }
+
+    .info-panel {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 35px;
+      margin-bottom: 40px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .info-panel h2 {
+      font-family: 'Cinzel', serif;
+      color: var(--accent-gold);
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+      text-align: center;
+      letter-spacing: 1.5px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 25px;
+    }
+
+    .info-item {
+      background: rgba(107, 77, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 20px;
+    }
+
+    .info-item strong {
+      color: var(--accent-purple-soft);
+      font-weight: 600;
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .info-item span {
+      color: var(--text-main);
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .agenda-section {
+      margin-top: 40px;
+    }
+
+    .agenda-section h3 {
+      font-family: 'Cinzel', serif;
+      color: var(--accent-gold);
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .agenda-item {
+      background: rgba(244, 201, 107, 0.05);
+      border-left: 4px solid var(--accent-gold);
+      padding: 20px;
+      margin-bottom: 15px;
+      border-radius: var(--radius-sm);
+    }
+
+    .agenda-item .agenda-time {
+      color: var(--accent-purple-soft);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .agenda-item .agenda-title {
+      color: var(--text-main);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .agenda-item .agenda-description {
+      color: var(--text-soft);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .nda-section {
+      background: var(--bg-panel);
+      border: 2px solid var(--border-gold);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      margin-top: 50px;
+      box-shadow: var(--shadow-glow);
+    }
+
+    .nda-section h2 {
+      font-family: 'Cinzel', serif;
+      color: var(--accent-gold);
+      font-size: 2rem;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .nda-content {
+      color: var(--text-soft);
+      line-height: 1.8;
+    }
+
+    .nda-content h3 {
+      color: var(--accent-purple-soft);
+      font-size: 1.2rem;
+      margin-top: 25px;
+      margin-bottom: 15px;
+    }
+
+    .nda-content p {
+      margin-bottom: 15px;
+    }
+
+    .nda-content ul {
+      margin-left: 25px;
+      margin-bottom: 15px;
+    }
+
+    .nda-content li {
+      margin-bottom: 10px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      color: var(--text-main);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px 15px;
+      background: var(--bg-soft);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      color: var(--text-main);
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--accent-purple);
+      box-shadow: 0 0 0 3px rgba(107, 77, 255, 0.2);
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin: 25px 0;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .checkbox-group label {
+      color: var(--text-soft);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 16px 32px;
+      background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-gold) 100%);
+      color: #000;
+      border: none;
+      border-radius: var(--radius-md);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(107, 77, 255, 0.5);
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .confirmation {
+      display: none;
+      background: rgba(39, 174, 96, 0.1);
+      border: 2px solid var(--success);
+      border-radius: var(--radius-md);
+      padding: 30px;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .confirmation.show {
+      display: block;
+    }
+
+    .confirmation h3 {
+      color: var(--success);
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    .confirmation p {
+      color: var(--text-main);
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 60px;
+      border-top: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+    }
+
+    .footer p {
+      margin-bottom: 10px;
+    }
+
+    .footer .tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--accent-gold);
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero-header h1 {
+        font-size: 2rem;
+      }
+
+      .hero-header .subtitle {
+        font-size: 1.2rem;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nda-section {
+        padding: 25px;
+      }
+    }
+
+    .prior-knowledge-section {
+      background: rgba(244, 201, 107, 0.08);
+      border: 2px solid var(--accent-gold);
+      border-radius: var(--radius-md);
+      padding: 25px;
+      margin-bottom: 30px;
+    }
+
+    .prior-knowledge-section h3 {
+      color: var(--accent-gold);
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+
+    .prior-knowledge-section p {
+      color: var(--text-soft);
+      margin-bottom: 15px;
+      line-height: 1.7;
+    }
+
+    .radio-group {
+      margin: 20px 0;
+    }
+
+    .radio-option {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 15px;
+      padding: 15px;
+      background: rgba(107, 77, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+    }
+
+    .radio-option input[type="radio"] {
+      width: 20px;
+      height: 20px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .radio-option label {
+      color: var(--text-main);
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .prior-work-fields {
+      display: none;
+      margin-top: 20px;
+      padding: 20px;
+      background: rgba(244, 201, 107, 0.05);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-sm);
+    }
+
+    .prior-work-fields.show {
+      display: block;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 12px 15px;
+      background: var(--bg-soft);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      color: var(--text-main);
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: var(--accent-purple);
+      box-shadow: 0 0 0 3px rgba(107, 77, 255, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="hero-header">
+    <h1>The Ekklesia Mandate</h1>
+    <p class="subtitle">Apostolic Leadership Briefing - Phase One</p>
+    <p class="tagline">Called Out • Consecrated • Commissioned</p>
+    <p class="scripture">"Can two walk together, unless they are agreed?" — Amos 3:3</p>
+  </div>
+
+  <div class="container">
+    <div class="info-panel">
+      <h2>Meeting Details</h2>
+      <div class="info-grid">
+        <div class="info-item">
+          <strong>Date & Time</strong>
+          <span>Saturday, January 31, 2026<br>9:00 AM EST / 8:00 AM CST</span>
+        </div>
+        <div class="info-item">
+          <strong>Duration</strong>
+          <span>1 Hour</span>
+        </div>
+        <div class="info-item">
+          <strong>Location</strong>
+          <span>Virtual (Google Meet)<br>Link provided after NDA signature</span>
+        </div>
+        <div class="info-item">
+          <strong>Host</strong>
+          <span>Elder Tiffani Lansdowne<br>Developer & Steward of the Ekklesia Mandate<br>Atmosphere Christian Center</span>
+        </div>
+      </div>
+
+      <div class="agenda-section">
+        <h3>Meeting Agenda</h3>
+        
+        <div class="agenda-item">
+          <div class="agenda-time">Opening (5 min)</div>
+          <div class="agenda-title">Welcome & Spiritual Alignment</div>
+          <div class="agenda-description">Opening prayer and establishing spiritual atmosphere</div>
+        </div>
+
+        <div class="agenda-item">
+          <div class="agenda-time">10 minutes</div>
+          <div class="agenda-title">Who We Are</div>
+          <div class="agenda-description">Understanding the biblical Ekklesia vs. institutional Christianity</div>
+        </div>
+
+        <div class="agenda-item">
+          <div class="agenda-time">12 minutes</div>
+          <div class="agenda-title">The Mandate</div>
+          <div class="agenda-description">Called Out, Consecrated & Commissioned - The three-fold framework</div>
+        </div>
+
+        <div class="agenda-item">
+          <div class="agenda-time">15 minutes</div>
+          <div class="agenda-title">The Vision</div>
+          <div class="agenda-description">Heaven's blueprint for Earth, the systems being released, and the Kairos moment we're in</div>
+        </div>
+
+        <div class="agenda-item">
+          <div class="agenda-time">12 minutes</div>
+          <div class="agenda-title">Memshalah Global</div>
+          <div class="agenda-description">The mission, vision, and purpose of the faith-based governing network</div>
+        </div>
+
+        <div class="agenda-item">
+          <div class="agenda-time">7 minutes</div>
+          <div class="agenda-title">Covenant Partnership Invitation</div>
+          <div class="agenda-description">Overview of covenant partnership for those called to the Apostolic Council (detailed process in follow-up meeting)</div>
+        </div>
+
+        <div class="agenda-item">
+          <div class="agenda-time">Closing (3 min)</div>
+          <div class="agenda-title">Questions & Next Steps</div>
+          <div class="agenda-description">How to move forward and closing prayer</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nda-section">
+      <h2>Confidentiality Agreement</h2>
+      
+      <div class="nda-content">
+        <p style="color: var(--text-main); font-weight: 600; margin-bottom: 20px; text-align: center; font-size: 1.2rem;">MUTUAL NON-DISCLOSURE AGREEMENT</p>
+        
+        <p><strong>Purpose:</strong> This briefing will disclose proprietary intellectual property related to The Ekklesia Mandate, Memshalah Global, and associated apostolic systems. This Non-Disclosure Agreement protects confidential governmental strategies, theological frameworks, and Kingdom infrastructure.</p>
+
+        <div class="prior-knowledge-section">
+          <h3>⚠️ CRITICAL: Prior Disclosure Declaration</h3>
+          <p><strong>Before receiving any Confidential Information, you must declare:</strong></p>
+          
+          <div class="radio-group">
+            <div class="radio-option">
+              <input type="radio" id="noPriorKnowledge" name="priorKnowledge" value="no" required>
+              <label for="noPriorKnowledge">I have NO prior knowledge of concepts, systems, or frameworks substantially similar to The Ekklesia Mandate, Memshalah Global, or related systems.</label>
+            </div>
+            
+            <div class="radio-option">
+              <input type="radio" id="hasPriorKnowledge" name="priorKnowledge" value="yes">
+              <label for="hasPriorKnowledge">I DO have prior knowledge of similar concepts or systems (describe below).</label>
+            </div>
+          </div>
+
+          <div id="priorWorkFields" class="prior-work-fields">
+            <div class="form-group">
+              <label for="priorWorkDescription">Description of Prior Work *</label>
+              <textarea id="priorWorkDescription" placeholder="Describe any similar concepts, systems, or frameworks you have developed or been exposed to..."></textarea>
+            </div>
+            <div class="form-group">
+              <label for="priorWorkDate">Date of Development/Exposure</label>
+              <input type="text" id="priorWorkDate" placeholder="e.g., January 2020">
+            </div>
+          </div>
+
+          <p style="margin-top: 15px; font-size: 0.9rem; color: var(--text-muted);"><strong>Consequences:</strong> Failure to disclose prior knowledge may result in waiver of all exceptions. False declaration may constitute fraud and breach of contract. Burden of proof for any claimed exception rests entirely with you.</p>
+        </div>
+
+        <h3>1. Confidential Information Includes</h3>
+        <ul>
+          <li><strong>The Ekklesia Mandate™</strong> - Theological framework, apostolic government structure, implementation protocols (Called Out, Consecrated, Commissioned)</li>
+          <li><strong>Memshalah Global™</strong> - Faith-based governing network and Kingdom governmental infrastructure</li>
+          <li><strong>Ekklesia Connect™</strong> - Digital discipleship platform and community coordination system</li>
+          <li><strong>R144™ Global Dashboard</strong> - Crisis response, resource allocation, and regional coordination system</li>
+          <li><strong>Covenant Partner Portal™</strong> - Membership access and covenant application workflow</li>
+          <li><strong>The Joseph Initiative</strong> - Economic empowerment and Kingdom marketplace strategy</li>
+          <li>All theological frameworks, technical specifications, system workflows, operational documents, training materials, and strategic implementation plans</li>
+        </ul>
+
+        <h3>2. Your Obligations</h3>
+        <ul>
+          <li>Hold all Confidential Information in <strong>strict confidence</strong></li>
+          <li><strong>Do NOT disclose</strong> to any third party without prior written consent from XCG</li>
+          <li>Use information <strong>solely for evaluating</strong> potential covenant partnership</li>
+          <li>Protect information with the highest degree of care</li>
+          <li>May only share with spouse or maximum 2 senior leaders (who must be bound by same obligations)</li>
+        </ul>
+
+        <h3>3. Prohibited Actions - You SHALL NOT:</h3>
+        <ul>
+          <li>Copy, record, photograph, or screenshot materials without permission</li>
+          <li>Develop competing systems using disclosed concepts</li>
+          <li>Register trademarks using similar branding or terminology</li>
+          <li>Create derivative works based on theological frameworks</li>
+          <li>Teach, present, or publish The Ekklesia Mandate framework without authorization</li>
+          <li>Recruit or solicit Covenant Partners or leaders within The Ekklesia Mandate network</li>
+        </ul>
+
+        <h3>4. Non-Compete Covenant (3 Years)</h3>
+        <p>For THREE (3) YEARS from today, you agree NOT to develop, launch, or operate any initiative that is <strong>IDENTICAL TO or SUBSTANTIALLY SIMILAR TO</strong> and directly competes with The Ekklesia Mandate, Memshalah Global, Ekklesia Connect, R144™, or Covenant Partner Portal.</p>
+        <p><em>This does NOT prohibit general apostolic ministry or teaching general biblical principles. It specifically prevents creation of substantially similar competing systems.</em></p>
+
+        <h3>5. Non-Circumvention Covenant (7 Years)</h3>
+        <p>For SEVEN (7) YEARS, you agree NOT to bypass XCG to directly contact, partner with, or recruit individuals, churches, or organizations introduced through The Ekklesia Mandate network.</p>
+
+        <h3>6. Intellectual Property Ownership</h3>
+        <p><strong>Tiffani E. Lansdowne-Omopariola</strong> is the creator, founder, and visionary of The Ekklesia Mandate and all associated systems. <strong>Xodus Conglomerate Group, LLC (XCG)</strong> is the sole legal owner of all intellectual property disclosed. No rights, ownership, or licenses are granted except as expressly stated.</p>
+        <p><strong>Important:</strong> Any suggestions or feedback you provide automatically become the exclusive property of XCG without compensation.</p>
+
+        <h3>7. Term & Survival</h3>
+        <ul>
+          <li>Confidentiality obligations: <strong>25 years</strong></li>
+          <li>Non-compete provisions: <strong>3 years</strong></li>
+          <li>Non-circumvention provisions: <strong>7 years</strong> (United States)</li>
+          <li>IP ownership acknowledgments: <strong>Perpetual</strong></li>
+        </ul>
+
+        <h3>8. Exceptions (Burden of Proof on You)</h3>
+        <p>Information is NOT confidential ONLY if you can prove with <strong>clear and convincing documentary evidence</strong> that it:</p>
+        <ul>
+          <li>Was publicly known before disclosure (with dated public records)</li>
+          <li>Was rightfully possessed by you before disclosure (with written records dated prior to today and disclosed in Section 0)</li>
+          <li>Was independently developed by you without use of Confidential Information (with contemporaneous written documentation)</li>
+        </ul>
+
+        <h3>9. Remedies for Breach</h3>
+        <p>Breach will cause <strong>irreparable harm</strong>. XCG may seek:</p>
+        <ul>
+          <li>Immediate injunctive relief (court order to stop you)</li>
+          <li>Monetary damages (direct, consequential, lost profits)</li>
+          <li>Attorney's fees and costs</li>
+          <li>Any other relief available at law or equity</li>
+        </ul>
+        <p><strong>Spiritual Accountability:</strong> This Agreement operates under both natural law and spiritual covenant principles. Breach violates biblical principles of integrity and trustworthiness, breaks covenant relationship, and may carry spiritual consequences beyond legal remedy.</p>
+
+        <h3>10. Governing Law & Jurisdiction</h3>
+        <p>This Agreement is governed by the laws of the <strong>State of Texas</strong>. Any legal action must be brought in state courts of Bell County, Texas, or federal courts for the Western District of Texas. You irrevocably consent to jurisdiction and venue in these courts.</p>
+
+        <h3>11. General Provisions</h3>
+        <ul>
+          <li>This is the entire agreement regarding confidentiality</li>
+          <li>Amendments must be in writing and signed by both parties</li>
+          <li>Electronic signatures are valid and binding</li>
+          <li>You may NOT assign this Agreement without XCG's written consent</li>
+          <li>This does NOT create partnership, joint venture, or employment relationship</li>
+        </ul>
+
+        <div id="confirmationMessage" class="confirmation">
+          <h3>✓ Agreement Accepted</h3>
+          <p>Thank you for reviewing and accepting the confidentiality agreement. Your information has been recorded.<br><br><strong>Check your email within 5 minutes</strong> for your confirmation with:<br>• Google Meet link<br>• Signed NDA PDF<br>• Meeting agenda PDF<br><br>We look forward to seeing you on January 31, 2026!</p>
+        </div>
+
+        <form id="ndaForm" style="margin-top: 40px;">
+          <div style="background: rgba(244, 201, 107, 0.1); border: 1px solid var(--border-gold); border-radius: var(--radius-md); padding: 25px; margin-bottom: 30px;">
+            <h3 style="font-family: 'Cinzel', serif; color: var(--accent-gold); text-align: center; margin-bottom: 15px;">Digital Signature & Acknowledgment</h3>
+            <p style="color: var(--text-soft); text-align: center; font-size: 0.95rem;">By signing below, you acknowledge that you have read, understood, and agree to ALL terms of this Non-Disclosure Agreement including the Prior Disclosure Declaration.</p>
+          </div>
+
+          <div class="form-group">
+            <label for="fullName">Full Legal Name *</label>
+            <input type="text" id="fullName" name="fullName" required>
+          </div>
+
+          <div class="form-group">
+            <label for="organization">Ministry/Organization (if applicable)</label>
+            <input type="text" id="organization" name="organization">
+          </div>
+
+          <div class="form-group">
+            <label for="title">Title/Position *</label>
+            <input type="text" id="title" name="title" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address">
+          </div>
+
+          <div class="form-group">
+            <label for="city">City, State, ZIP</label>
+            <input type="text" id="city" name="city">
+          </div>
+
+          <div class="form-group">
+            <label for="signature">Digital Signature (Type Full Legal Name) *</label>
+            <input type="text" id="signature" name="signature" required placeholder="Must match Full Legal Name exactly">
+          </div>
+
+          <div class="form-group">
+            <label for="date">Date *</label>
+            <input type="date" id="date" name="date" required>
+          </div>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="acknowledge" name="acknowledge" required>
+            <label for="acknowledge">
+              <strong>I acknowledge and agree:</strong><br>
+              ☑ I have read and understand this entire Agreement<br>
+              ☑ I am entering this Agreement voluntarily<br>
+              ☑ I understand the confidential and proprietary nature of The Ekklesia Mandate<br>
+              ☑ I have completed the Prior Disclosure Declaration truthfully<br>
+              ☑ I understand unauthorized disclosure will result in legal action<br>
+              ☑ I will NOT compete, circumvent, or misappropriate as defined<br>
+              ☑ I acknowledge XCG owns all intellectual property disclosed<br>
+              ☑ This is a legally binding contract enforceable in court<br>
+              ☑ I have had opportunity to consult legal counsel<br>
+              ☑ I understand spiritual accountability for breach<br>
+              ☑ I agree to jurisdiction in Bell County, Texas<br>
+              ☑ Electronic signature is valid and binding
+            </label>
+          </div>
+
+          <button type="submit" class="submit-btn">I Agree to the Terms</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>&copy; 2025 The Ekklesia Mandate | Memshalah Global</p>
+      <p class="tagline">Apostolic Council Formation - Phase One</p>
+      <p style="margin-top: 15px; font-size: 0.85rem;">Questions? Contact: <a href="mailto:theekklesiaexperience@gmail.com" style="color: var(--accent-gold); text-decoration: none;">theekklesiaexperience@gmail.com</a></p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('date').valueAsDate = new Date();
+
+    document.querySelectorAll('input[name="priorKnowledge"]').forEach(radio => {
+      radio.addEventListener('change', function() {
+        const priorWorkFields = document.getElementById('priorWorkFields');
+        if (this.value === 'yes') {
+          priorWorkFields.classList.add('show');
+          document.getElementById('priorWorkDescription').required = true;
+        } else {
+          priorWorkFields.classList.remove('show');
+          document.getElementById('priorWorkDescription').required = false;
+        }
+      });
+    });
+
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyotqXg_Q_pL1IRmFSl63ElTvg93eIjsejFLI0Fn3bD8hFKbD7rgrBq2RlH5ZqRQVFo/exec';
+
+    document.getElementById('ndaForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const priorKnowledge = document.querySelector('input[name="priorKnowledge"]:checked');
+      if (!priorKnowledge) {
+        alert('⚠️ Please complete the Prior Disclosure Declaration before submitting.');
+        return;
+      }
+
+      const formData = {
+        fullName: document.getElementById('fullName').value,
+        organization: document.getElementById('organization').value,
+        title: document.getElementById('title').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        address: document.getElementById('address').value,
+        city: document.getElementById('city').value,
+        signature: document.getElementById('signature').value,
+        date: document.getElementById('date').value,
+        priorKnowledge: priorKnowledge.value,
+        priorWorkDescription: priorKnowledge.value === 'yes' ? document.getElementById('priorWorkDescription').value : '',
+        priorWorkDate: priorKnowledge.value === 'yes' ? document.getElementById('priorWorkDate').value : '',
+        timestamp: new Date().toISOString(),
+        ipAddress: 'N/A'
+      };
+
+      if (formData.signature.toLowerCase() !== formData.fullName.toLowerCase()) {
+        alert('⚠️ Your digital signature must match your full legal name exactly.');
+        return;
+      }
+
+      const submitBtn = document.querySelector('.submit-btn');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+
+      console.log('Submitting to:', GOOGLE_SCRIPT_URL);
+      console.log('Form data:', formData);
+
+      fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(() => {
+        console.log('Form submitted successfully!');
+        document.getElementById('ndaForm').style.display = 'none';
+        document.getElementById('confirmationMessage').classList.add('show');
+        document.getElementById('confirmationMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      })
+      .catch((error) => {
+        console.error('Error submitting form:', error);
+        alert('There was an error submitting the form. Please try again or contact us directly.');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'I Agree to the Terms';
+      });
+    });
+  </script>
+</body>
+</html>
